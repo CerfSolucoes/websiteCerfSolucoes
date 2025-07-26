@@ -32,4 +32,4 @@ Este modelo de ramificação visa garantir qualidade, rastreabilidade e previsib
 ## Integrantes do Grupo
 
 -   João Pedro Barbosa Alves
--   Nome Completo do Integrante 2
+-   Matheus Roberto Lira Dias
