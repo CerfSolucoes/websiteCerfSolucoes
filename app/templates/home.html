@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block title %}Início{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+{% block content %}
+<section>
+    <div class="slider">
+        <div class="slides">
+            <!-- ---------------------- Radio Buttons ------------------------ -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!-- ------------------------- Slide images ------------------------- -->
+
+            <div class="slide first">
+                <img src="{{ url_for('static', filename='backgrounds/background1.jpg') }}" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='backgrounds/background2.jpg') }}" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='backgrounds/background3.jpg') }}" alt="Imagem 3">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='backgrounds/background4.jpg') }}" alt="Imagem 4">
+            </div>
+        </div>
+         <!-- Slogan sobre o slide -->
+        <div class="slogan">
+            <div class="slogan-content">
+                <h1>
+                    Energizando<br/>
+                    <span class="highlight-blue">Sonhos</span><br/>
+                    Conectando<br/>
+                    <span class="highlight-blue">Ideias</span>
+                </h1>
+            </div>
+            <div class="buttons">
+                <a href="#" class="btn-primary">NOSSOS SERVIÇOS</a>
+                <a href="/contato" class="btn-outline">FAÇA SEU ORÇAMENTO</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </div>
+    </div>
+    <!-- Carrossel de Serviços -->
+    <div class="container">
+        <div class="card-wrapper">
+            <ul class="card-list">
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="" alt="Cartão de Serviços 1" class="card-image">
+                        <p class="Category">Elétrico</p>
+                        <h2 class="Card-title"> Projeto</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="" alt="Cartão de Serviços 1" class="card-image">
+                        <p class="Category">Elétrico</p>
+                        <h2 class="Card-title"> Projeto</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="" alt="Cartão de Serviços 1" class="card-image">
+                        <p class="Category">Elétrico</p>
+                        <h2 class="Card-title"> Projeto</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+</section>
+   
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let count = 1;
+    document.getElementById("radio1").checked = true;
+
+    setInterval(function () {
+        nextImage();
+    }, 10000);
+
+    function nextImage() {
+        if (document.getElementById("radio1").checked === true) {
+            count = 2;
+        } else if (document.getElementById("radio2").checked === true) {
+            count = 3;
+        } else if (document.getElementById("radio3").checked === true) {
+            count = 4;
+        } else if (document.getElementById("radio4").checked === true) {
+            count = 1;
+        }
+
+        document.getElementById("radio" + count).checked = true;
+    }
+</script>
+{% endblock %}
+
+
+<div class="home-container">
+    <h2>Bem-vindo à Home</h2>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+</div>
+<!-- 
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // troca a cada 5 segundos
+    setInterval(nextSlide, 5000);
+
+
+
+
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // troca a cada 5 segundos
+    setInterval(nextSlide, 5000);
+</script>
+
+
+ -->-->

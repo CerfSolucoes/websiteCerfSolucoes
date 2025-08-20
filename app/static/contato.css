@@ -1,0 +1,155 @@
+body {
+    padding-top: 60px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 4%;
+    display: flex;
+    justify-content: space-between;
+    background: rgb(10, 42, 67);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 1s;
+}
+
+header a img{
+    height: 40px;
+    display: block;
+    object-fit: contain;
+    transition: 1s;
+}
+
+.container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-image {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-image img {
+	width: 35rem;
+}
+
+.form {
+	width: 60%;
+	min-width: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 3rem;
+}
+
+.form-header {
+	margin-bottom: 3rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-btn {
+	display: flex;
+	align-items: center;
+}
+
+.form-btn button {
+	border: none;
+	color: #fff;
+	font-weight: 500;
+	background-color: #10395c;
+	padding: 0.7rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 2rem;
+}
+
+.form-btn button:hover {
+	background-color: #0e019b;
+}
+
+.form-header h1::after {
+	content: '';
+	display: block;
+	width: 5rem;
+	height: 0.3rem;	
+	background-color: #0e019b;
+	margin: 0 auto;
+	position: absolute;
+	border-radius: 10px;
+}
+
+.form-input {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.input-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-box input, select, textarea{
+	resize: none;
+	width: 100%;
+	margin: 0.6rem 0;
+	padding: 0.8rem 1.2rem;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box input:hover, select:hover, textarea:hover {
+	background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible, select:focus-visible, textarea:focus-visible {
+	outline: 1px solid #0e019b;
+}
+
+.form-input div {
+	width: 100%;
+}
+
+.form-row { 
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 1rem;
+	gap: 1rem;
+}
+
+.form-tel {
+    flex: 1.1; /* menor proporção */
+}
+
+.form-email {
+    flex: 1.9; /* maior proporção */
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+	.container {
+		flex-direction: column;
+	}
+	.form-image img {
+		display: none;
+	}
+	.form {
+		width: 100%;
+		min-width: 300px;
+		padding: 0.5rem;
+	}
+}

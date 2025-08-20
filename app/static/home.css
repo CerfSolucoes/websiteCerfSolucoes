@@ -1,0 +1,371 @@
+main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* altura total da tela */
+    overflow: hidden;
+}
+
+/* Slides container */
+.slides {
+    display: flex;
+    width: 400%; /* 4 imagens */
+    height: 100%;
+}
+
+.slides input {
+    display: none;
+}
+
+/* Cada slide ocupa 100% */
+.slide {
+    width: 25%;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+    transition: 2s;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Radio button checked styling (auto-slide) */
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -75%;
+}
+
+/* -------- Slogan sobre os slides -------- */
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 2; /* acima das imagens */
+    pointer-events: none;
+}
+
+.slogan-content,
+.buttons {
+    pointer-events: auto;
+}
+
+.slogan h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.highlight-blue {
+    color: #13aae2;
+}
+
+/* -------- Botões -------- */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #13aae2;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid #13aae2;
+    color: #13aae2;
+    background: transparent;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+    background-color: white;
+    color: #13aae2;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* altura fixa */
+    background-image: url("/static/img/wave.png");
+    background-size: 1000px 100px;
+}
+
+/* Wave 1 */
+.wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 10;
+    opacity: 1;
+    animation-delay: 0s;
+}
+
+/* Wave 2 */
+.wave.wave2 {
+    animation: animate 15s linear infinite;
+    z-index: 9;
+    opacity: 0.6;
+    animation-delay: -5s;
+}
+
+/* Wave 3 */
+.wave.wave3 {
+    animation: animate 22s linear infinite;
+    z-index: 8;
+    opacity: 0.4;
+    animation-delay: -2s;
+}
+
+/* Wave 4 */
+.wave.wave4 {
+    animation: animate 18s linear infinite;
+    z-index: 7;
+    opacity: 0.5;
+    animation-delay: -7s;
+}
+
+/* Wave 5 */
+.wave.wave5 {
+    animation: animate 25s linear infinite;
+    z-index: 6;
+    opacity: 0.3;
+    animation-delay: -3s;
+}
+
+/* Wave 6 */
+.wave.wave6 {
+    animation: animate 12s linear infinite;
+    z-index: 5;
+    opacity: 0.2;
+    animation-delay: -4s;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .slide img {
+        height: 80vh; /* altura menor em celulares */
+        object-fit: cover;
+    }
+
+    .slide::before {
+        height: 80vh;
+    }
+
+    .slider {
+        height: 80vh;
+    }
+
+    .slogan {
+        gap: 1rem;
+    }
+
+    .slogan h1 {
+        font-size: 2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 2rem 1rem;
+    }
+
+    .buttons a {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+/* Slider base 
+.slider {
+    margin: 0 auto;
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-shrink: 0;
+    transition: 2s;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(50px);
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+
+.manual-navigation,
+.navigation-auto {
+    position: absolute;
+    width: 100%;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    z-index: 4;
+}
+
+.manual-btn,
+.navigation-auto div {
+    border: 2px solid #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:hover {
+    background-color: #ffffff;
+}
+
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -100%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -200%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -300%;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1,
+#radio2:checked ~ .navigation-auto .auto-btn2,
+#radio3:checked ~ .navigation-auto .auto-btn3,
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background-color: #fff;
+}*/
+
+/*.slide {
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100vh; /* ocupa a altura total da tela 
+    object-fit: cover; /* corta laterais mantendo proporção 
+}*/
+
+/*.slides {
+    width: 400%;
+    height: auto;
+    display: flex;
+}*/
+
+/*.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}*/

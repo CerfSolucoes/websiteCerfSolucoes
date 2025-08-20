@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Contato{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='contato.css') }}">
+{% endblock %}
+{% block content %}
+<section class="container">
+    <!-- Coluna do Formulário -->
+    <div class="form">
+        <form action='/mensagem-enviada/' method='POST' name='contatoform'>
+            <div class="form-header">
+                <div class="form-title">
+                    <h1>Entre em contato</h1>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <!-- Nome -->
+                <div class="form-name input-box">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                </div>
+                <!-- Telefone e Email-->
+                <div class="form-row">
+                    <div class="form-tel input-box">
+                        <input type="tel" name="celular" placeholder="(00) 00000-0000" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required>
+                    </div>
+                    <div class="form-email input-box">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                </div>
+                <!-- Assunto -->
+                <div class="form-subject input-box">
+                    <label>Quero falar sobre:</label>
+                    <select class="form-select" name="assunto" required>
+                        <option value="none" disabled selected>Selecione...</option>
+                        <option value="">Suporte</option>
+                        <option value="">Orçamento</option>
+                        <option value="">Parceria</option>
+                        <option value="">Outro</option>
+                    </select>
+                </div>
+                <!-- Mensagem -->
+                <div class="form-message">
+                    <textarea name="mensagem" rows="6" placeholder="Mensagem" required></textarea>
+                </div>
+                <p class="form-description">
+                    <small>
+                        Por gentileza, descreva sua dúvida ou necessidade. Esta mensagem será enviada ao nosso time de assessores, que retornará o contato o mais breve possível.
+                    </small>
+                 </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="novidades" id="novidades">
+                    <label class="form-check-label" for="novidades">
+                        <small>
+                            Desejo receber as novidades da Cerf Soluções por e-mail.
+                        </small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-btn">
+                <button type="submit">ENVIAR</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Coluna da Imagem -->
+    <div class="form-image">
+        <img src="{{ url_for('static', filename='img/messages_db.svg') }}" alt="Formulário">
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+<div class="layer layer-text">
+    <div class="flex-row">
+        <div class="flex-column">
+            <h2>Envie sua mensagem</h2>
+        </div>
+    </div>
+    <div class="flex-row">
+        <div class="flex-column">
+            <form action='/mensagem-enviada/' method='POST' name='contato_form-website_cerf'><input type='hidden' name='form-name' value='contato_form-website_cerf' />
+                <div class="form-box">
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" placeholder="Nome" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="telefone">Telefone</label>
+                            <input type="number" name="telefone" placeholder="Telefone" required>
+
+                        </div>
+                        <div class="form-column">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="E-mail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="tipo_assunto" style="display: inline;">Quero falar sobre:</label>
+                            <select name="tipo_pergunta" id="tipo_pergunta" required>
+                                <option value="none" disabled selected>Selecione...</option>
+                                <option value="">Orçamento</option>
+                                <option value="">Dúvida</option>
+                                <option value="">Outro assunto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea name="mensagem" rows="8" placeholder="Mensagem" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <p><small>Por gentileza, descreva sua dúvida ou necessidade. Esta mensagem será enviada ao nosso time de assessores, que retornará o contato o mais breve possível.</small></p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="receber_msg" style="display: inline-block;"><input type="checkbox" name="receber_msg" id="receber_msg" checked><small>Desejo receber as novidades da Cerf Soluções Tecnológicas por <span style="white-space: nowrap;">e-mail.</span></small></label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <input type="submit" name="submit" placeholder="Enviar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
