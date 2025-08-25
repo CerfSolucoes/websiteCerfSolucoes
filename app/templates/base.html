@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Importante para mobile -->
+
+    <!-- Título da página-->
     <title>{% block title %}Meu Site{% endblock %}</title>
 
     <!-- CSS padrão para todo o site -->
@@ -10,38 +12,43 @@
 
     <!-- CSS adicional, caso a página precise -->
     {% block styles %}{% endblock %}
+
+    <!-- Head adicional, caso a página precise-->
+     {% block head %}{% endblock %}
 </head>
 <body class="body">
 
-    <!----- Cabeçalho ----->
+    <!-- Cabeçalho -->
     <header class="header" id="header">
         <a href="{{ url_for('main.index') }}" title="Página Inicial - CERF">
-            <img id="logo" src="{{ url_for('static', filename='img/logo_cerf_standard.svg') }}" 
+            <img id="logo" src="{{ url_for('static', filename='img/logo_cerf_white.svg') }}" 
                 alt="Logo CERF" class="nav-logo">
         </a>
 
-        <!----- Barra de Navegação ----->
+        <!-- Barra de Navegação -->
         <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
             
 
-            <!----- Links da Barra de Navegação ----->
+            <!-- Links da Barra de Navegação -->
             <ul class="nav-menu">
                 <li><a href="{{ url_for('main.index') }}">Início</a></li>
                 <li><a href="{{ url_for('main.sobre') }}">Sobre Nós</a></li>
                 <li><a href="{{ url_for('main.faq') }}">FAQ</a></li>
-                <!------ Menu dropdown ----->
+
+                <!-- Menu dropdown -->
                 <li class="dropdown">
                     <a href="{{ url_for('main.servicos') }}">Serviços ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ url_for('main.servicos') }}">Projeto Fotovoltaico</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Homologação</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Manutenção de Sistema Fotovoltaico</a></li>
                         <li><a href="{{ url_for('main.servicos') }}">Projetos Elétricos</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Projetos Arquiteônico</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Laudo Técnico de SPDA</a></li>
+                        <li><a href="{{ url_for('main.servicos') }}">Projetos Arquitetônico</a></li>
+                        <li><a href="{{ url_for('main.servicos') }}">Homologação</a></li>
                         <li><a href="{{ url_for('main.servicos') }}">Projeto de Padão de entrada</a></li>
+                        <li><a href="{{ url_for('main.servicos') }}">Manutenção Fotovoltaica</a></li>
+                        <li><a href="{{ url_for('main.servicos') }}">Laudo Técnico de SPDA</a></li>
                     </ul>
                 </li>
+
                 <!-- Menu dropdown (end) -->
                 <li><a href="{{ url_for('main.conteudo') }}">Conteúdo</a></li>
                 <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
@@ -55,69 +62,19 @@
 
     <!-- Conteúdo dinâmico -->
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% for post in posts %}{% endfor %}
+        {% endblock %}
     </main>
-
+    <!-- Conteúdo dinâmico (end) -->
+    
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 - Todos os direitos reservados</p>
     </footer>
+    <!-- Rodapé (end) -->
 
-    <!-- Script para abrir/fechar menu mobile -->
-    <script>
-        const logo = document.getElementById("logo");
-
-        if (window.location.pathname != "/") {
-            logo.src = "{{ url_for('static', filename='img/logo_cerf_white.svg') }}";
-        }
-        window.addEventListener("scroll",function(){
-            let header = document.querySelector('#header')
-
-            header.classList.toggle('rolagem',window.scrollY > 0)
-            
-            if (window.scrollY > 0 && window.location.pathname === "/") {
-                logo.src = "{{ url_for('static', filename='img/logo_cerf_white.svg') }}";
-            } else if(window.scrollY === 0 && window.location.pathname === "/") {
-                logo.src = "{{ url_for('static', filename='img/logo_cerf_standard.svg') }}";
-            }
-        })
-    </script>
+    <!-- Script adicional, caso a página precise -->
     {% block scripts %}{% endblock %}
 </body>
 </html>
-
-
-<!-- 
- const menuToggle = document.getElementById("menu-toggle");
- const navMenu = document.querySelector(".nav-menu");
-        const dropdowns = document.querySelectorAll(".dropdown");
-
- 
-// Toggle menu principal
-        menuToggle.addEventListener("click", () => {
-            const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-            menuToggle.setAttribute("aria-expanded", !expanded);
-            navMenu.classList.toggle("active");
-        });
-
-        // Dropdowns no mobile
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener("click", (e) => {
-                if (window.innerWidth <= 1000) {
-                    e.preventDefault();
-                    dropdown.classList.toggle("show");
-                }
-            });
-        });
-
-
-
-
- Botão hambúrguer (mobile) 
-            <button class="menu-toggle" id="menu-toggle" 
-                    aria-controls="nav-bar" 
-                    aria-expanded="false" 
-                    aria-label="Abrir menu de navegação">
-                &#9776;
-            </button>
-Botão hambúrguer (mobile) (end) -->

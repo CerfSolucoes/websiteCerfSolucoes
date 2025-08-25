@@ -33,3 +33,4 @@ Este modelo de ramificação visa garantir qualidade, rastreabilidade e previsib
 
 -   João Pedro Barbosa Alves
 -   Matheus Roberto Lira Dias
+-   Nome completo do 3º integrante

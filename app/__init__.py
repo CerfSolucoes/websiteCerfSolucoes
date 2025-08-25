@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 def create_app():
     app = Flask(__name__)
@@ -11,4 +11,9 @@ def create_app():
     app.register_blueprint(main_bp)
     app.register_blueprint(admin_bp, url_prefix='/admin')
 
+    # Handler global para erro 404
+    @app.errorhandler(404)
+    def pagina_nao_encontrada(error):
+        return render_template("404.html"), 404
+    
     return app

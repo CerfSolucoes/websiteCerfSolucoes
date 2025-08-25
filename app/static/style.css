@@ -11,6 +11,8 @@
 
   
     /* ========== Font and typography ========== */
+    --large--font-size: 32px;
+    --medium-font-size: 24px;
     --normal-font-size: 16px;
     --small-font-size: 15px;
     --smaller-font-size: 14px;
@@ -41,6 +43,7 @@ body {
     background-color: var(--body-color);
     font-size: var(--normal-font-size);
     line-height: 1.6;
+    padding-top: 60px;
 }
 
 header {
@@ -49,33 +52,20 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 4% 10px 10%;
+    padding: 10px 4%;
     display: flex;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.064);
+    background: rgb(10, 42, 67);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: 1s;
 }
 
-/* ------------- Efeito de Rolagem na pagina principal ------------- */
-
 header a img{
-    height: 70px;
+    height: 40px;
     display: block;
     object-fit: contain;
     transition: 1s;
 }
-
-header.rolagem {
-    background: rgb(10, 42, 67);
-    padding: 10px 4%;
-}
-
-header.rolagem a img{
-    height: 40px;
-}
-
-/* ------------------------------ end ------------------------------ */
 
 main {
     max-width: 1150px;
