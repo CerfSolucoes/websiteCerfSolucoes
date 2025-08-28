@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Importante para mobile -->
+
+    <!-- Título da página-->
+    <title>Sobre Nós</title>
+
+    <!-- CSS padrão para todo o site -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- CSS adicional, caso a página precise -->
+    
+<link rel="stylesheet" href="/static/contato.css">
+
+
+    <!-- Head adicional, caso a página precise-->
+     
+</head>
+<body class="body">
+
+    <!-- Cabeçalho -->
+    <header class="header" id="header">
+        <div class="delimitador_de_largura">
+            <a href="/" title="Página Inicial - CERF">
+                <img id="logo" src="/static/img/logo_cerf_white.svg" 
+                    alt="Logo CERF" class="nav-logo">
+            </a>
+
+            <!-- Barra de Navegação -->
+            <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
+                <!-- Links da Barra de Navegação -->
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/sobre">Sobre Nós</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+
+                    <!-- Menu dropdown -->
+                    <li class="dropdown">
+                        <a href="/servicos">Serviços ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/servicos">Projeto Fotovoltaico</a></li>
+                            <li><a href="/servicos">Projetos Elétricos</a></li>
+                            <li><a href="/servicos">Projetos Arquitetônico</a></li>
+                            <li><a href="/servicos">Homologação</a></li>
+                            <li><a href="/servicos">Projeto de Padão de entrada</a></li>
+                            <li><a href="/servicos">Manutenção Fotovoltaica</a></li>
+                            <li><a href="/servicos">Laudo Técnico de SPDA</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menu dropdown (end) -->
+                    <li><a href="/conteudo">Conteúdo</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/contato">Login</a></li>
+                </ul>
+                <!-- Links da Barra de Navegação (end) -->
+            </nav>
+            <!-- Barra de Navegação (end) -->
+        </div>
+        
+    </header>
+    <!-- Cabeçalho (end) -->
+
+    <!-- Conteúdo dinâmico -->
+    <main>
+        
+<h2>Sobre Nós</h2>
+<p>Informações sobre a empresa...</p>
+
+    </main>
+    <!-- Conteúdo dinâmico (end) -->
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer">
+            <div class="wave-footer"></div>
+            <p>&copy; 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <!-- Rodapé (end) -->
+
+    <!-- Script adicional, caso a página precise -->
+    
+</body>
+</html>

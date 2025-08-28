@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Importante para mobile -->
+
+    <!-- Título da página-->
+    <title>Início</title>
+
+    <!-- CSS padrão para todo o site -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- CSS adicional, caso a página precise -->
+    
+<link rel="stylesheet" href="/static/home.css">
+
+<!-- Link SwiperJS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+
+    <!-- Head adicional, caso a página precise-->
+     
+</head>
+<body class="body">
+
+    <!-- Cabeçalho -->
+    <header class="header" id="header">
+        <div class="delimitador_de_largura">
+            <a href="/" title="Página Inicial - CERF">
+                <img id="logo" src="/static/img/logo_cerf_white.svg" 
+                    alt="Logo CERF" class="nav-logo">
+            </a>
+
+            <!-- Barra de Navegação -->
+            <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
+                <!-- Links da Barra de Navegação -->
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/sobre">Sobre Nós</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+
+                    <!-- Menu dropdown -->
+                    <li class="dropdown">
+                        <a href="/servicos">Serviços ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/servicos">Projeto Fotovoltaico</a></li>
+                            <li><a href="/servicos">Projetos Elétricos</a></li>
+                            <li><a href="/servicos">Projetos Arquitetônico</a></li>
+                            <li><a href="/servicos">Homologação</a></li>
+                            <li><a href="/servicos">Projeto de Padão de entrada</a></li>
+                            <li><a href="/servicos">Manutenção Fotovoltaica</a></li>
+                            <li><a href="/servicos">Laudo Técnico de SPDA</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menu dropdown (end) -->
+                    <li><a href="/conteudo">Conteúdo</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/contato">Login</a></li>
+                </ul>
+                <!-- Links da Barra de Navegação (end) -->
+            </nav>
+            <!-- Barra de Navegação (end) -->
+        </div>
+        
+    </header>
+    <!-- Cabeçalho (end) -->
+
+    <!-- Conteúdo dinâmico -->
+    <main>
+        
+<section class="container">
+    <div class="slider">
+        <div class="slide fade active">
+            <img src="/static/backgrounds/background1.jpg" alt="Imagem 1">
+        </div>
+        <div class="slide fade">
+            <img src="/static/backgrounds/background2.jpg" alt="Imagem 2">
+        </div>
+        <div class="slide fade">
+            <img src="/static/backgrounds/background3.jpg" alt="Imagem 3">
+        </div>
+        <div class="slide fade">
+            <img src="/static/backgrounds/background4.jpg" alt="Imagem 4">
+        </div>
+         <!-- Slogan sobre o slide -->
+        <div class="slogan">
+            <div class="slogan-content">
+                <h1 class="slogan-title">
+                    <span class="line">Energizando</span>
+                    <span class="line highlight-blue">Sonhos</span>
+                    <span class="line">Conectando</span>
+                    <span class="line highlight-blue">Ideias</span>
+                </h1>
+            </div>
+            <div class="buttons">
+                <a href="#" class="btn-primary">NOSSOS SERVIÇOS</a>
+                <a href="/contato" class="btn-outline">FAÇA SEU ORÇAMENTO</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+            <div class="wave wave5"></div>
+            <div class="wave wave6"></div>
+        </div>
+    </div>
+    <!-- Sobre a CERF -->
+    <div class="section-about">
+        <div class="title-about">
+            <h1>Nossa História</h1>
+        </div>
+        <div class="home-about">
+            <div class="img-about">
+                <img src="/static/img/img-about.jpg" alt="Formulário">
+            </div>
+            <div class="description-about">
+                <h2>CERF Soluções</h2>
+                <p>
+                    Desde 2015, a <strong>CERF Soluções</strong> é a Empresa Júnior de Engenharias do 
+                    <strong>Instituto Federal da Paraíba (IFPB - Campus João Pessoa)</strong>. 
+                </p>
+                <p>
+                    Somos movidos pelo propósito de transformar conhecimento em impacto real. 
+                    Acreditamos que a inovação é a chave para o progresso e, por isso, 
+                    trabalhamos em equipe para desenvolver projetos únicos que geram valor, 
+                    estimulam o aprendizado prático e contribuem para o desenvolvimento da sociedade.
+                </p>
+                <p>
+                    Na CERF, cada desafio é uma oportunidade de criar soluções criativas e sustentáveis 
+                    que aproximam a universidade do mercado e formam profissionais preparados para o futuro.
+                </p>
+                <button class="btn-about">Conheça mais</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de Serviços -->
+    <div class="card-container swiper">
+        <h1>Nossas Soluções</h1>
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+
+                
+            </ul>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </div>
+    <!-- Carrossel de Serviços end -->
+
+</section>
+   
+
+    </main>
+    <!-- Conteúdo dinâmico (end) -->
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer">
+            <div class="wave-footer"></div>
+            <p>&copy; 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <!-- Rodapé (end) -->
+
+    <!-- Script adicional, caso a página precise -->
+    
+
+<!-- Link SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Link Script Personalizado -->
+<script src="/static/script.js"></script>
+
+<script>
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const logo = document.getElementById("logo");
+
+    if (window.location.pathname == "/") {
+        logo.src = "/static/img/logo_cerf_standard.svg";
+    }
+    window.addEventListener("scroll",function(){
+        let header = document.querySelector('#header')
+
+        header.classList.toggle('rolagem',window.scrollY > 0)
+        
+        if (window.scrollY > 0 && window.location.pathname === "/") {
+            logo.src = "/static/img/logo_cerf_white.svg";
+        } else if(window.scrollY === 0 && window.location.pathname === "/") {
+            logo.src = "/static/img/logo_cerf_standard.svg";
+        }
+    })
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // inicia
+    showSlide(currentSlide);
+    setInterval(nextSlide, 8000); // troca a cada 8s
+</script>
+
+</body>
+</html>

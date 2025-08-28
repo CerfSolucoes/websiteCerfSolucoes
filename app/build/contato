@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Importante para mobile -->
+
+    <!-- Título da página-->
+    <title>Contato</title>
+
+    <!-- CSS padrão para todo o site -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- CSS adicional, caso a página precise -->
+    
+<link rel="stylesheet" href="/static/contato.css">
+
+
+    <!-- Head adicional, caso a página precise-->
+     
+</head>
+<body class="body">
+
+    <!-- Cabeçalho -->
+    <header class="header" id="header">
+        <div class="delimitador_de_largura">
+            <a href="/" title="Página Inicial - CERF">
+                <img id="logo" src="/static/img/logo_cerf_white.svg" 
+                    alt="Logo CERF" class="nav-logo">
+            </a>
+
+            <!-- Barra de Navegação -->
+            <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
+                <!-- Links da Barra de Navegação -->
+                <ul class="nav-menu">
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/sobre">Sobre Nós</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+
+                    <!-- Menu dropdown -->
+                    <li class="dropdown">
+                        <a href="/servicos">Serviços ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/servicos">Projeto Fotovoltaico</a></li>
+                            <li><a href="/servicos">Projetos Elétricos</a></li>
+                            <li><a href="/servicos">Projetos Arquitetônico</a></li>
+                            <li><a href="/servicos">Homologação</a></li>
+                            <li><a href="/servicos">Projeto de Padão de entrada</a></li>
+                            <li><a href="/servicos">Manutenção Fotovoltaica</a></li>
+                            <li><a href="/servicos">Laudo Técnico de SPDA</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menu dropdown (end) -->
+                    <li><a href="/conteudo">Conteúdo</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/contato">Login</a></li>
+                </ul>
+                <!-- Links da Barra de Navegação (end) -->
+            </nav>
+            <!-- Barra de Navegação (end) -->
+        </div>
+        
+    </header>
+    <!-- Cabeçalho (end) -->
+
+    <!-- Conteúdo dinâmico -->
+    <main>
+        
+<section class="container">
+    <!-- Coluna do Formulário -->
+    <div class="form">
+        <form action='/mensagem-enviada/' method='POST' name='contatoform'>
+            <div class="form-header">
+                <div class="form-title">
+                    <h1>Entre em contato</h1>
+                </div>
+            </div>
+
+            <div class="form-input">
+                <!-- Nome -->
+                <div class="form-name input-box">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                </div>
+                <!-- Telefone e Email-->
+                <div class="form-row">
+                    <div class="form-tel input-box">
+                        <input type="tel" name="celular" placeholder="(00) 00000-0000" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required>
+                    </div>
+                    <div class="form-email input-box">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                </div>
+                <!-- Assunto -->
+                <div class="form-subject input-box">
+                    <label>Quero falar sobre:</label>
+                    <select class="form-select" name="assunto" required>
+                        <option value="none" disabled selected>Selecione...</option>
+                        <option value="">Suporte</option>
+                        <option value="">Orçamento</option>
+                        <option value="">Parceria</option>
+                        <option value="">Outro</option>
+                    </select>
+                </div>
+                <!-- Canal -->
+                 <div class="form-subject input-box">
+                    <label>Como conheceu a CERF Soluções?</label>
+                    <select class="form-select" name="canal" required>
+                        <option value="none" disabled selected>Selecione...</option>
+                        <option value="">Google</option>
+                        <option value="">Instagram</option>
+                        <option value="">Facebook</option>
+                        <option value="">Linkedin</option>
+                        <option value="">Indicação</option>
+                        <option value="">Email</option>
+                        <option value="">Eventos</option>
+                        <option value="">Anúncios</option>
+                        <option value="">Outros</option>
+                    </select>
+                </div>
+                <!-- Mensagem -->
+                <div class="form-message">
+                    <textarea name="mensagem" rows="6" placeholder="Mensagem" required></textarea>
+                </div>
+                <p class="form-description">
+                    <small>
+                        Por gentileza, descreva sua dúvida ou necessidade. Esta mensagem será enviada ao nosso time de assessores, que retornará o contato o mais breve possível.
+                    </small>
+                 </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="novidades" id="novidades">
+                    <label class="form-check-label" for="novidades">
+                        <small>
+                            Desejo receber as novidades da Cerf Soluções por e-mail.
+                        </small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-btn">
+                <button type="submit">ENVIAR</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Coluna da Imagem -->
+    <div class="form-image">
+        <img src="/static/img/messages_db.svg" alt="Formulário">
+    </div>
+</section>
+
+    </main>
+    <!-- Conteúdo dinâmico (end) -->
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer">
+            <div class="wave-footer"></div>
+            <p>&copy; 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <!-- Rodapé (end) -->
+
+    <!-- Script adicional, caso a página precise -->
+    
+</body>
+</html>
