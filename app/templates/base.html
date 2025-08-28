@@ -20,43 +20,44 @@
 
     <!-- Cabeçalho -->
     <header class="header" id="header">
-        <a href="{{ url_for('main.index') }}" title="Página Inicial - CERF">
-            <img id="logo" src="{{ url_for('static', filename='img/logo_cerf_white.svg') }}" 
-                alt="Logo CERF" class="nav-logo">
-        </a>
+        <div class="delimitador_de_largura">
+            <a href="{{ url_for('main.index') }}" title="Página Inicial - CERF">
+                <img id="logo" src="{{ url_for('static', filename='img/logo_cerf_white.svg') }}" 
+                    alt="Logo CERF" class="nav-logo">
+            </a>
 
-        <!-- Barra de Navegação -->
-        <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
-            
+            <!-- Barra de Navegação -->
+            <nav class="nav-bar" id="nav-bar" aria-label="Menu principal">
+                <!-- Links da Barra de Navegação -->
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('main.index') }}">Início</a></li>
+                    <li><a href="{{ url_for('main.sobre') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('main.faq') }}">FAQ</a></li>
 
-            <!-- Links da Barra de Navegação -->
-            <ul class="nav-menu">
-                <li><a href="{{ url_for('main.index') }}">Início</a></li>
-                <li><a href="{{ url_for('main.sobre') }}">Sobre Nós</a></li>
-                <li><a href="{{ url_for('main.faq') }}">FAQ</a></li>
+                    <!-- Menu dropdown -->
+                    <li class="dropdown">
+                        <a href="{{ url_for('main.servicos') }}">Serviços ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('main.servicos') }}">Projeto Fotovoltaico</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Projetos Elétricos</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Projetos Arquitetônico</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Homologação</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Projeto de Padão de entrada</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Manutenção Fotovoltaica</a></li>
+                            <li><a href="{{ url_for('main.servicos') }}">Laudo Técnico de SPDA</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Menu dropdown -->
-                <li class="dropdown">
-                    <a href="{{ url_for('main.servicos') }}">Serviços ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ url_for('main.servicos') }}">Projeto Fotovoltaico</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Projetos Elétricos</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Projetos Arquitetônico</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Homologação</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Projeto de Padão de entrada</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Manutenção Fotovoltaica</a></li>
-                        <li><a href="{{ url_for('main.servicos') }}">Laudo Técnico de SPDA</a></li>
-                    </ul>
-                </li>
-
-                <!-- Menu dropdown (end) -->
-                <li><a href="{{ url_for('main.conteudo') }}">Conteúdo</a></li>
-                <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
-                <li><a href="{{ url_for('main.contato') }}">Login</a></li>
-            </ul>
-            <!-- Links da Barra de Navegação (end) -->
-        </nav>
-        <!-- Barra de Navegação (end) -->
+                    <!-- Menu dropdown (end) -->
+                    <li><a href="{{ url_for('main.conteudo') }}">Conteúdo</a></li>
+                    <li><a href="{{ url_for('main.contato') }}">Contato</a></li>
+                    <li><a href="{{ url_for('main.contato') }}">Login</a></li>
+                </ul>
+                <!-- Links da Barra de Navegação (end) -->
+            </nav>
+            <!-- Barra de Navegação (end) -->
+        </div>
+        
     </header>
     <!-- Cabeçalho (end) -->
 
@@ -70,7 +71,10 @@
     
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2025 - Todos os direitos reservados</p>
+        <div class="footer">
+            <div class="wave-footer"></div>
+            <p>&copy; 2025 - Todos os direitos reservados</p>
+        </div>
     </footer>
     <!-- Rodapé (end) -->
 

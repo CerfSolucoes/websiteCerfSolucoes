@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from .csv_storage import read_services, ensure_csv_exists
 
 def create_app():
     app = Flask(__name__)
@@ -7,6 +8,10 @@ def create_app():
     # Importa e registra os blueprints
     from .main import main as main_bp
     from .admin import admin as admin_bp
+
+    # Garante CSV e carrega serviços
+    ensure_csv_exists()
+    app.services = read_services()
 
     app.register_blueprint(main_bp)
     app.register_blueprint(admin_bp, url_prefix='/admin')

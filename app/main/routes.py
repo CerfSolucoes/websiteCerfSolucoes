@@ -1,10 +1,11 @@
 # main/routes.py
+from flask import render_template, current_app
 from . import main
-from flask import render_template
 
 @main.route('/')
 def index():
-    return render_template('home.html')
+    services = current_app.services  # pega da instância do Flask
+    return render_template('home.html', services=services)
 
 @main.route('/sobre')
 def sobre():
@@ -12,7 +13,7 @@ def sobre():
 
 @main.route('/servicos')
 def servicos():
-    return render_template('servicos.html')
+    return render_template('home.html')
 
 @main.route('/faq')
 def faq():
@@ -20,11 +21,11 @@ def faq():
 
 @main.route('/portfolio')
 def portfolio():
-    return render_template('portfolio.html')
+    return render_template('home.html')
 
 @main.route('/conteudo')
 def conteudo():
-    return render_template('conteudo.html')
+    return render_template('home.html')
 
 @main.route('/contato')
 def contato():
