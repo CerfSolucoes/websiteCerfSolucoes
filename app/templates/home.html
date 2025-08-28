@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block title %}Início{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+<!-- Link SwiperJS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+{% endblock %}
+{% block content %}
+<section class="container">
+    <div class="slider">
+        <div class="slide fade active">
+            <img src="{{ url_for('static', filename='backgrounds/background1.jpg') }}" alt="Imagem 1">
+        </div>
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='backgrounds/background2.jpg') }}" alt="Imagem 2">
+        </div>
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='backgrounds/background3.jpg') }}" alt="Imagem 3">
+        </div>
+        <div class="slide fade">
+            <img src="{{ url_for('static', filename='backgrounds/background4.jpg') }}" alt="Imagem 4">
+        </div>
+         <!-- Slogan sobre o slide -->
+        <div class="slogan">
+            <div class="slogan-content">
+                <h1 class="slogan-title">
+                    <span class="line">Energizando</span>
+                    <span class="line highlight-blue">Sonhos</span>
+                    <span class="line">Conectando</span>
+                    <span class="line highlight-blue">Ideias</span>
+                </h1>
+            </div>
+            <div class="buttons">
+                <a href="#" class="btn-primary">NOSSOS SERVIÇOS</a>
+                <a href="/contato" class="btn-outline">FAÇA SEU ORÇAMENTO</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+            <div class="wave wave5"></div>
+            <div class="wave wave6"></div>
+        </div>
+    </div>
+    <!-- Sobre a CERF -->
+    <div class="section-about">
+        <div class="title-about">
+            <h1>Nossa História</h1>
+        </div>
+        <div class="home-about">
+            <div class="img-about">
+                <img src="{{ url_for('static', filename='img/img-about.jpg') }}" alt="Formulário">
+            </div>
+            <div class="description-about">
+                <h2>CERF Soluções</h2>
+                <p>
+                    Desde 2015, a <strong>CERF Soluções</strong> é a Empresa Júnior de Engenharias do 
+                    <strong>Instituto Federal da Paraíba (IFPB - Campus João Pessoa)</strong>. 
+                </p>
+                <p>
+                    Somos movidos pelo propósito de transformar conhecimento em impacto real. 
+                    Acreditamos que a inovação é a chave para o progresso e, por isso, 
+                    trabalhamos em equipe para desenvolver projetos únicos que geram valor, 
+                    estimulam o aprendizado prático e contribuem para o desenvolvimento da sociedade.
+                </p>
+                <p>
+                    Na CERF, cada desafio é uma oportunidade de criar soluções criativas e sustentáveis 
+                    que aproximam a universidade do mercado e formam profissionais preparados para o futuro.
+                </p>
+                <button class="btn-about">Conheça mais</button>
+            </div>
+        </div>
+    </div>
+    <!-- Carrossel de Serviços -->
+    <div class="card-container swiper">
+        <h1>Nossas Soluções</h1>
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+
+                {% for service in services %}
+                    <li class="card-item swiper-slide">
+                        <a href="{{ service.page }}" class="card-link">
+                            <img src="{{ url_for('static', filename=service.image) }}" alt="Cartão de Serviços 1" class="card-image">
+                            <p class="card-category {{ service.type }}">{{ service.category }}</p>
+                            <h2 class="card-title">{{ service.title }}</h2>
+                            <button class="card-button">Saiba mais</button>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </div>
+    <!-- Carrossel de Serviços end -->
+
+</section>
+   
+{% endblock %}
+
+<!-- --------------- Scripts --------------- -->
+{% block scripts %}
+
+<!-- Link SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Link Script Personalizado -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script>
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const logo = document.getElementById("logo");
+
+    if (window.location.pathname == "/") {
+        logo.src = "{{ url_for('static', filename='img/logo_cerf_standard.svg') }}";
+    }
+    window.addEventListener("scroll",function(){
+        let header = document.querySelector('#header')
+
+        header.classList.toggle('rolagem',window.scrollY > 0)
+        
+        if (window.scrollY > 0 && window.location.pathname === "/") {
+            logo.src = "{{ url_for('static', filename='img/logo_cerf_white.svg') }}";
+        } else if(window.scrollY === 0 && window.location.pathname === "/") {
+            logo.src = "{{ url_for('static', filename='img/logo_cerf_standard.svg') }}";
+        }
+    })
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // inicia
+    showSlide(currentSlide);
+    setInterval(nextSlide, 8000); // troca a cada 8s
+</script>
+{% endblock %}
+<!-- ------------- Scripts end ------------- -->
+
+<div class="home-container">
+    <h2>Bem-vindo à Home</h2>
+    <p>Este é o conteúdo inicial do site, usando o layout principal.</p>
+</div>
+
+<!-- <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="{{ url_for('static', filename='backgrounds/background1.jpg') }}" alt="Cartão de Serviços 1" class="card-image">
+                        <p class="card-category civil">Civil</p>
+                        <h2 class="card-title">Projeto Arquitetônico</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="{{ url_for('static', filename='backgrounds/background2.jpg') }}" alt="Cartão de Serviços 2" class="card-image">
+                        <p class="card-category eletrica">Elétrico</p>
+                        <h2 class="card-title">Projeto Fotovotaico</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="{{ url_for('static', filename='backgrounds/background3.jpg') }}" alt="Cartão de Serviços 3" class="card-image">
+                        <p class="card-category eletrica">Elétrico</p>
+                        <h2 class="card-title">Projeto Elétrico</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="{{ url_for('static', filename='backgrounds/background4.jpg') }}" alt="Cartão de Serviços 4" class="card-image">
+                        <p class="card-category eletrica">Elétrico</p>
+                        <h2 class="card-title">Manutenção Fotovotaica</h2>
+                        <button class="card-button">Saiba mais</button>
+                    </a>
+                </li> -->
