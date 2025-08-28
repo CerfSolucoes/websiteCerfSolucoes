@@ -1,1 +1,27 @@
-
+{
+  "name": "cerf-solucao-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website da Cerf Soluções - Gatsby App deploy no Netlify",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "predeploy": "gatsby build",
+    "deploy": "netlify deploy --dir=public --prod"
+  },
+  "dependencies": {
+    "gatsby": "^5.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^16.0.0"
+  },
+  "browserslist": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+}
